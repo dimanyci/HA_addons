@@ -1,0 +1,11 @@
+{
+  "name": "Masquerade NAT Setup",
+  "slug": "masqaddon",
+  "description": "Enables IP forwarding and NAT MASQUERADE for Home Assistant networking",
+  "version": "1.0.0",
+  "startup": "services",
+  "boot": "auto",
+  "host_network": true,
+  "privileged": ["NET_ADMIN"],
+  "arch": ["amd64", "i386", "aarch64", "armv7", "armhf"]
+}
