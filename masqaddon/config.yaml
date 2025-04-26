@@ -1,8 +1,8 @@
 ---
 name: "Masquerade NAT Setup"
 description: >
-  Enables IP forwarding and configures NAT MASQUERADE
-  for Home Assistant.
+  Enables IP forwarding and configures NAT MASQUERADE (iptables) for Home Assistant networking.
+  Supports additional custom commands execution at startup.
 version: "1.0.0"
 slug: "masqaddon"
 init: false
@@ -14,17 +14,26 @@ privileged:
   - NET_ADMIN
 build: true
 stage: stable
-url: "https://github.com/dimanyci/HA_addons"
+url: "https://github.com/dimanyci/HA_addons/tree/main/masqaddon"
+panel_icon: "mdi:lan"
+panel_title: "NAT Setup"
 arch:
   - amd64
   - i386
   - aarch64
   - armv7
   - armhf
+
 options:
   log_level: "info"
   commands: []
+
 schema:
   log_level: str?
   commands:
     - str
+
+image: "local/masqaddon"
+repository: "https://github.com/dimanyci/HA_addons"
+documentation: "https://github.com/dimanyci/HA_addons/blob/main/masqaddon/README.md"
+issues: "https://github.com/dimanyci/HA_addons/issues"
